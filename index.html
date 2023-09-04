@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Le Saut De Puces</title>
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="Around - Multipurpose Bootstrap HTML Template">
+    <meta name="keywords" content="bootstrap, business, corporate, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, saas, multipurpose, product landing, shop, software, ui kit, web studio, landing, dark mode, html5, css3, javascript, gallery, slider, touch, creative">
+    <meta name="author" content="Createx Studio, integration by Liony94">
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/logo.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/logo.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/logo.jpg">
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="white">
+    <!-- Theme mode-->
+    <script>
+      let mode = window.localStorage.getItem('mode'),
+          root = document.getElementsByTagName('html')[0];
+      if (mode !== undefined && mode === 'dark') {
+        root.classList.add('dark-mode');
+      } else {
+        root.classList.remove('dark-mode');
+      }
+      
+      
+    </script>
+    <!-- Page loading styles-->
+    <style>
+      :root{--ar-primary:#c534a6;--ar-primary-rgb:197,52,166;--ar-body-font-family:'Inter',sans-serif;--ar-link-color:#c534a6;--ar-link-hover-color:#ac1b8d;}.btn-primary{--ar-btn-bg:#c534a6;--ar-btn-border-color:#c534a6;--ar-btn-hover-bg:#ac1b8d;--ar-btn-hover-border-color:#ac1b8d;--ar-btn-active-bg:#ac1b8d;--ar-btn-active-border-color:#ac1b8d;--ar-btn-disabled-bg:#c534a6;--ar-btn-disabled-border-color:#c534a6;}.btn-outline-primary{--ar-btn-color:#c534a6;--ar-btn-border-color:#c534a6;--ar-btn-hover-bg:#c534a6;--ar-btn-hover-border-color:#c534a6;--ar-btn-active-bg:#c534a6;--ar-btn-active-border-color:#c534a6;--ar-btn-disabled-color:#c534a6;--ar-btn-disabled-border-color:#c534a6;}
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .animate-me {
+        opacity: 0;
+        transform: translateY(100px);
+        transition: all 3s ease;
+      }
+      .animate-me.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .fixed-size-img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+      .dark-mode .page-loading {
+        background-color: #121519;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #6f788b;
+      }
+      .dark-mode .page-loading-inner > span {
+        color: #fff;
+        opacity: .6;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        background-color: #d7dde2; 
+        border-radius: 50%;
+        opacity: 0;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      .dark-mode .page-spinner {
+        background-color: rgba(255,255,255,.25);
+      }
+      @-webkit-keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      @keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      
+    </style>
+    <!-- Page loading scripts-->
+    <script>
+      (function () {
+        window.onload = function () {
+          const preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 1500);
+        };
+      })();
+      
+    </script>
+    <!-- Import Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" id="google-font">
+    <!-- Vendor styles-->
+    <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css"/>
+    <link rel="stylesheet" media="screen" href="assets/vendor/fullcalendar/main.min.css"/>
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+  </head>
+  <!-- Body-->
+  <body>
+    <!-- Page loading spinner-->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Loading...</span>
+      </div>
+    </div>
+    <!-- Page wrapper-->
+    <main class="page-wrapper">
+      <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page-->
+      <header class="navbar navbar-expand-lg fixed-top navbar-ignore-dark-mode ignore-dark-mode">
+        <div class="container"><a class="navbar-brand pe-sm-3"><span class="text-primary flex-shrink-0 me-2">
+              <svg version="1.1" width="35" height="32" viewBox="0 0 36 33" xmlns="http://www.w3.org/2000/svg">
+              </svg></span></a>
+          <div class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto" data-bs-toggle="mode">
+            <input class="form-check-input" type="checkbox" id="theme-mode">
+            <label class="form-check-label" for="theme-mode"><i class="ai-sun fs-lg"></i></label>
+            <label class="form-check-label" for="theme-mode"><i class="ai-moon fs-lg"></i></label>
+        </div>
+        </div>
+      </header>
+      <!-- Page content-->
+      <!-- Hero slider-->
+      <section class="ignore-dark-mode position-relative min-vh-100 py-5">
+        <!-- Background image slider-->
+        <div class="swiper swiper-scale-effect position-absolute top-0 start-0 w-100 h-100" data-swiper-options="{
+      &quot;effect&quot;: &quot;fade&quot;,
+      &quot;speed&quot;: 800,
+      &quot;autoplay&quot;: {
+        &quot;delay&quot;: 7000,
+        &quot;disableOnInteraction&quot;: false
+      },
+      &quot;pagination&quot;: {
+        &quot;el&quot;: &quot;.swiper-pagination&quot;,
+        &quot;clickable&quot;: true
+      }
+    }">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="swiper-slide-cover bg-position-top-center" style="background-image: url(assets/img/landing/yoga-studio/hero/01.jpg);"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="swiper-slide-cover bg-position-top-center" style="background-image: url(assets/img/landing/yoga-studio/hero/02.jpg);"></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="swiper-slide-cover bg-position-top-center" style="background-image: url(assets/img/landing/yoga-studio/hero/03.jpg);"></div>
+            </div>
+          </div>
+          <div class="swiper-pagination mb-4"></div>
+        </div>
+        <!-- Content-->
+        <div class="container position-relative zindex-2 py-lg-3 py-xl-5 my-5">
+          <div class="row pt-md-3 py-xxl-5 my-5">
+            <div class="col py-5 mb-md-4 mb-lg-5">
+              <h1 class="display-1 text-uppercase mb-4" style="color: #d488c4;">Le Saut De Puces</h1>
+              <p class="d-block fs-xl pb-2 mb-4 mb-md-5" style="max-width: 500px; color: #ffffff;">Actualités et photos concernant la drôle de boutique Le Saut de Puces</p>
+              <div class="position-relative d-inline-flex align-items-center"><a class="btn btn-icon btn-lg rounded-circle stretched-link" style="background-color: #d488c4;" href="#" data-bs-toggle="video"><i class="ai-play-filled"></i></a><span class="fs-lg fw-semibold ms-3" style="color: #ffffff;">Découvrir en vidéo </span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- About Us -->
+      <section id="about-us" class="container py-5 my-5">
+        <div class="row">
+          <div class="col-md-6">
+            <h2 class="display-4 mb-4">À propos de nous</h2>
+            <p class="fs-xl pb-2 mb-4" style="max-width: 500px;">Niché au cœur d'Alfortville, dans le 94, 'Le Saut de Puces' est bien plus qu'un simple commerce de quartier.bre d'enfant, ou un vêtement unique, vous êtes sûr de trouver quelque chose de spécial ici. Ce n'est pas simplement la qualité des produits qui distingue 'Le Saut de Puces', mais aussi l'ambiance chaleureuse et le service personnalisé. Les habitants considèrent ce lieu comme un trésor du quartieVenez découvrir ce petit joyau, et faites le saut dans un monde d'enchantement pour les petits et les grands !</p>
+          </div>
+          <div class="col-md-6 animate-me">
+            <img src="assets/img/landing/yoga-studio/instagram/06.jpg" alt="Image about us" class="img-fluid" style="border-radius: 20px;">
+          </div>
+        </div>
+      </section>
+      <!-- Trainers (Grid)-->
+      <section class="container pb-2 pb-sm-3 pt-5 mt-lg-3 mt-xl-4 mt-xxl-5">
+        <h2 class="h1 text-center pt-2 pt-sm-4 pt-lg-5 pb-2 mb-3 mb-lg-4 mt-md-3 mt-lg-0">Nos employés</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center">
+          <div class="col text-center pt-2"><a class="card-hover card-lifted d-inline-block text-decoration-none"><img class="card-lifted d-block rounded-5 mb-3" src="assets/img/landing/yoga-studio/trainers/01.jpg" width="340" alt="Alisa Black">
+              <h3 class="h5 mb-1">Alisa Black</h3>
+              <p class="mb-0 text-muted">Gérante du shop</p></a>
+          </div>
+        </div>
+      </section>
+      <!-- Instagram-->
+      <section class="position-relative pt-5 mt-lg-3 mt-xl-4 mt-xxl-5">
+        <div class="bg-secondary position-absolute start-0 bottom-0 w-100 d-none d-sm-block" style="height: 110px;"></div>
+        <div class="bg-secondary position-absolute start-0 bottom-0 w-100 d-sm-none" style="height: 80px;"></div>
+        <div class="container position-relative zindex-2 pt-2 pt-sm-4 pt-lg-5 mt-md-2 mt-lg-0">
+          <div class="h1 text-center pb-3 mb-3 mb-lg-4">Venez en voir plus sur <span style="color:#d488c4">Instagram</span></div>
+          <div class="row g-4">
+            <div class="col-md-12">
+              <div class="row g-3 g-sm-4 justify-content-center">
+                
+                <div class="col-md-4 col-12"><a class="d-block card-hover zoom-effect" href="https://www.instagram.com/lesautdepuces/">
+                    <div class="d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100 rounded-5 overflow-hidden zindex-2 opacity-0"><i class="ai-instagram lead text-white position-relative zindex-2"></i>
+                      <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-20"></div>
+                    </div>
+                  <div class="zoom-effect-wrapper rounded-5"><img class="zoom-effect-img fixed-size-img" src="assets/img/landing/yoga-studio/instagram/02.jpg" alt="Instagram image"></div></a>
+                </div>
+
+                <div class="col-md-4 col-12"><a class="d-block card-hover zoom-effect" href="https://www.instagram.com/lesautdepuces/">
+                    <div class="d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100 rounded-5 overflow-hidden zindex-2 opacity-0"><i class="ai-instagram lead text-white position-relative zindex-2"></i>
+                      <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-20"></div>
+                    </div>
+                    <div class="zoom-effect-wrapper rounded-5"><img class="zoom-effect-img fixed-size-img" src="assets/img/landing/yoga-studio/instagram/04.jpg" alt="Instagram image"></div></a></div>
+                <div class="col-md-4 col-12"><a class="d-block card-hover zoom-effect" href="https://www.instagram.com/lesautdepuces/">
+                    <div class="d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100 rounded-5 overflow-hidden zindex-2 opacity-0"><i class="ai-instagram lead text-white position-relative zindex-2"></i>
+                      <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-20"></div>
+                    </div>
+                    <div class="zoom-effect-wrapper rounded-5"><img class="zoom-effect-img fixed-size-img" src="assets/img/landing/yoga-studio/instagram/01.jpg" alt="Instagram image"></div></a></div>
+                    <div class="col-md-4 col-12"><a class="d-block card-hover zoom-effect" href="https://www.instagram.com/lesautdepuces/">
+                      <div class="d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100 rounded-5 overflow-hidden zindex-2 opacity-0"><i class="ai-instagram lead text-white position-relative zindex-2"></i>
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-20"></div>
+                      </div>
+                      <div class="zoom-effect-wrapper rounded-5"><img class="zoom-effect-img fixed-size-img" src="assets/img/landing/yoga-studio/instagram/05.jpg" alt="Instagram image"></div></a></div>
+                      <div class="col-md-4 col-12"><a class="d-block card-hover zoom-effect" href="https://www.instagram.com/lesautdepuces/">
+
+                <div class="d-flex justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100 rounded-5 overflow-hidden zindex-2 opacity-0"><i class="ai-instagram lead text-white position-relative zindex-2"></i>
+                  <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-20"></div>
+                </div>
+                <div class="zoom-effect-wrapper rounded-5"><img class="zoom-effect-img fixed-size-img" src="assets/img/landing/yoga-studio/instagram/03.jpg" alt="Instagram image"></div></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer-->
+    <footer class="footer bg-secondary py-5">
+      <div class="container pt-1 pt-sm-2 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="d-sm-flex align-items-center justify-content-between pt-4 mt-2 mt-sm-0">
+          <div class="d-flex justify-content-center order-sm-2 mb-4 mb-sm-0"><a class="btn btn-icon btn-sm btn-secondary btn-instagram rounded-circle me-3" href="#"><i class="ai-instagram"></i></a><a class="btn btn-icon btn-sm btn-secondary btn-facebook rounded-circle me-3" href="#"><i class="ai-facebook"></i></a><a class="btn btn-icon btn-sm btn-secondary btn-youtube rounded-circle" href="#"><i class="ai-youtube"></i></a></div>
+          <p class="fs-sm order-sm-1 text-center mb-0"><span class="opacity-70">&copy; All rights reserved. Made by </span><span class="nav-link d-inline fw-normal p-0" style="color: #d488c4;" rel="noopener">Le Saut De Puces</span></p>
+        </div>
+      </div>
+    </footer>
+    <!-- Back to top button--><a class="btn-scroll-top" href="#top" data-scroll>
+      <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></circle>
+      </svg><i class="ai-arrow-up"></i></a>
+    <!-- Vendor scripts: js libraries and plugins-->
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
+    <script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
+    <script src="assets/vendor/fullcalendar/main.min.js"></script>
+    <!-- Main theme script-->
+    <script src="assets/js/theme.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        window.addEventListener('scroll', function() {
+          const aboutUsElement = document.querySelector('#about-us');
+          const rect = aboutUsElement.getBoundingClientRect();
+          
+          if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            document.querySelectorAll('.animate-me').forEach(el => {
+              el.classList.add('active');
+            });
+          } else {
+            document.querySelectorAll('.animate-me').forEach(el => {
+              el.classList.remove('active');
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
